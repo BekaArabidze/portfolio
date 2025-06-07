@@ -209,9 +209,12 @@ const Noise = () => {
                 </h1>
 
                 <h1 className="about-me f-size-p4 hero-anim">
-                    I am web developer almost 3 years of experience. During
-                    these period I built several websites. I have been
-                    Co-founder and developer of Oxeni development.
+                    I'm a Software Engineer with over 4 years of experience
+                    building modern web applications. During this time, I’ve
+                    developed several websites and co-founded Oxeni, where I
+                    worked as a full stack developer. Currently, I’m part of the
+                    team at Theneo, focusing on developer tools and API
+                    platforms.
                 </h1>
 
                 <button className="check-more hero-anim">

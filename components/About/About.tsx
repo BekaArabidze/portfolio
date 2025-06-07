@@ -8,17 +8,26 @@ const About = () => {
             </h1>
             <div className="container intersact-el">
                 <div className="text">
-                    <p className="about-text f-size-p5 f-weight-600">
-                        Hello! My name is Beka and I create things for web. My
-                        interest in development started right before the collage
-                        and I had zero idea about it. First couple of years were
-                        hard, but now, It is getting better - Thanks to
-                        stackoverflow.
-                    </p>
-                    <br />
-                    <p className="about-text f-size-p5 f-weight-600">
-                        Nowadays, Me and my friend created a small development
-                        studio -
+                    <p className="about-text f-size-p6 f-weight-600">
+                        Hello! My name is Beka, and I build things for the web.
+                        I'm a Full Stack Developer with 4+ years of experience
+                        in software engineering, working with technologies like
+                        JavaScript, TypeScript, React, Next.js, Node.js, and
+                        MongoDB. At{" "}
+                        <a
+                            href="https://www.theneo.io/"
+                            rel="noreferrer"
+                            target="_blank"
+                            style={{ textDecoration: "none" }}
+                        >
+                            <span style={{ color: "var(--yellow)" }}>
+                                {" "}
+                                Theneo{" "}
+                            </span>
+                        </a>
+                        , I’ve contributed to developer tools by building a VS
+                        Code extension and improving API documentation
+                        workflows. Previously, I co-founded{" "}
                         <a
                             href="https://oxeni.dev/"
                             rel="noreferrer"
@@ -27,22 +36,12 @@ const About = () => {
                         >
                             <span style={{ color: "var(--yellow)" }}>
                                 {" "}
-                                Oxeni{" "}
+                                Oxeni(co-founder){" "}
                             </span>
-                        </a>
-                        - to create something on our own and to be bosses of
-                        ourselves. We created several websites - more about that
-                        in - &nbsp;
-                        <a
-                            href="#projects"
-                            style={{
-                                color: "var(--yellow)",
-                                cursor: "pointer",
-                                textDecoration: "none",
-                            }}
-                        >
-                            projects
-                        </a>
+                        </a>{" "}
+                        , where I led full-cycle development, optimized
+                        performance, and integrated 3D experiences using
+                        Three.js.
                     </p>
                     <br />
                     <p className="about-text f-size-p5 f-weight-600">
@@ -55,7 +54,7 @@ const About = () => {
                             <p>React</p>
                         </li>
                         <li className="skill">
-                            <p>Vue</p>
+                            <p>Mongo</p>
                         </li>
                         <li className="skill">
                             <p>Javacript</p>
@@ -64,7 +63,7 @@ const About = () => {
                             <p>TypeScript</p>
                         </li>
                         <li className="skill">
-                            <p>Redux</p>
+                            <p>Next</p>
                         </li>
                         <li className="skill">
                             <p>Node.js</p>
