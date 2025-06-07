@@ -1,0 +1,46 @@
+.intouch {
+    max-width: 600px;
+    margin: 0px auto 100px;
+    text-align: center;
+    padding:10vw 20px 7vw 20px;
+    margin:0 auto;
+
+    @media screen and (max-width:$mobile) {
+      padding: 30vw 20px 30vw 20px;
+    }
+
+
+    .hello {
+        border: 2px solid var(--yellow_3);
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 1rem 4rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        width:100%;
+        max-width:17rem;
+
+        @media screen and (max-width:$mobile) {
+          max-width:initial;
+        }
+        
+        h1 {
+          color:var(--black)
+        }
+
+        &:hover {
+            background-color: var(--yellow_3);
+            h1 {
+              color:var(--white);
+            }
+            filter: var(--main-shadow);
+
+
+            @media screen and (max-width: $mobile) {
+                filter: none;
+            }
+        }
+    }
+}

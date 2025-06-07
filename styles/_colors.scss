@@ -1,0 +1,46 @@
+:root {
+    --yellow_-1: #e49c0f;
+    --yellow: #ffaa03;
+    --yellow_1: #f5bb49;
+    --yellow_2: #f6c86e;
+    --yellow_3: #f5d595;
+    --grey_-1: #b6b2b9;
+    --grey: #dbdadf;
+    --grey_1: #e5e4e8;
+    --grey_2: #ebebee;
+    --grey_3: #efeff1;
+    --black_-2: #07060d;
+    --black_-1: #0f0e0f;
+    --black: #161416;
+    --black_1: #33323b;
+    --black_2: #636069;
+    --white_-1: #f6f6f6;
+    --white: #fcfcfc;
+    --white_1: #ffffff;
+    --purple_-1: #360fa7;
+    --purple: #4b1ad8;
+    --purple_1: #6f3dfe;
+    --purple_2: #9779ec;
+    --purple_3: #c2b4e9;
+    --orange_-1: #b2472f;
+    --orange: #ce4628;
+    --orange_1: #f67254;
+    --orange_2: #fa9a7d;
+    --orange_3: #febea9;
+    --green_-1: #11976e;
+    --green: #07a877;
+    --green_1: #37b991;
+    --green_2: #85d4bc;
+    --green_3: #81eecd;
+    --cream_-1: #dcc18d;
+    --cream: #f0dbb3;
+    --cream_1: #f8ead0;
+    --cream_2: #f9f0e0;
+    --cream_3: #fff9ef;
+
+    --main-shadow:drop-shadow(0px 100px 111px rgba(81, 56, 34, 0.27)) drop-shadow(0px 41.7776px 46.3731px rgba(81, 56, 34, 0.194091));
+}
+
+
+$mobile:780px;
+$tablet:1100px;

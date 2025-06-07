@@ -1,0 +1,78 @@
+.about-section {
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 7vw 20px;
+    position: relative;
+
+    .about-me {
+        color: var(--black);
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 0 50px;
+
+        @media screen and (max-width: $mobile) {
+            grid-template-columns: initial;
+            gap: 50px 0px;
+        }
+
+        .about-text {
+            opacity: 80%;
+        }
+
+        .pic {
+            position: relative;
+            filter: var(--main-shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            @media screen and (max-width: $mobile) {
+                filter: none;
+            }
+
+            .profile {
+                transition: all 0.3s ease;
+                border-radius: 8px;
+            }
+           
+        }
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 5px 10px;
+        padding: 0px;
+        margin: 20px 0px 0px;
+        overflow: hidden;
+        list-style: none;
+
+        .skill {
+            position: relative;
+            margin-bottom: 5px;
+            padding-left: 20px;
+
+            p {
+                font-size: 16px;
+                opacity: 70%;
+            }
+
+            &:before {
+                content: "▹";
+                position: absolute;
+                left: 0px;
+                color: var(--black);
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}

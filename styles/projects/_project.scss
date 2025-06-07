@@ -1,0 +1,80 @@
+.projects {
+    padding: 0vw 20px;
+
+    .main-title {
+        width: 100%;
+        @include flex();
+        margin: 6vw 0 5vw 0;
+        color: var(--black);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 50px;
+
+        @media screen and (max-width: $mobile) {
+            grid-template-columns: initial;
+            gap: 50px 0px;
+        }
+
+        .project {
+            position: relative;
+        }
+
+        .title {
+            margin: 1vw 0;
+        }
+
+        .project-img {
+            position: relative;
+            cursor: pointer;
+            transform: scale(1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .project_name {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+                // -webkit-backdrop-filter: blur(10px);
+                cursor: pointer;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--grey);
+                opacity: 1;
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                transform: scale(1.02);
+                transition: all 0.3s;
+
+                .project_name {
+                    backdrop-filter: blur(10px);
+                    // -webkit-backdrop-filter: blur(10px);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    opacity: 0;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .img {
+                box-shadow: var(--main-shadow);
+                display: block;
+            }
+        }
+    }
+}

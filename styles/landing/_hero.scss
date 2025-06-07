@@ -1,0 +1,51 @@
+.hero {
+    overflow: hidden;
+}
+
+.introduction {
+    position: absolute;
+    top: 30%;
+    left: 5vw;
+
+    @media screen and (max-width: $mobile) {
+        left: 10vw;
+    }
+    .about-me {
+        width: 100%;
+        max-width: 40rem;
+
+        @media screen and (max-width: $tablet) {
+            max-width: 22rem;
+        }
+    }
+
+    .check-more {
+        border: 2px solid var(--yellow_3);
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 1rem 4rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0px 5px 15px rgba(143, 119, 69, 0.99));
+        width: 100%;
+        max-width: 17rem;
+
+        @media screen and (max-width: $mobile) {
+            max-width: initial;
+        }
+
+        &:hover {
+            background-color: var(--yellow_3);
+        }
+    }
+
+    .hero-anim {
+        @include transform(-20px);
+    }
+
+    h1 {
+        color: var(--white);
+    }
+}
