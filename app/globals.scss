@@ -1,0 +1,35 @@
+@use "../styles/tokens";
+@use "../styles/type";
+@use "../styles/mixins";
+@use "../styles/reset";
+
+// Scroll-reveal (driven by components/ui/Reveal.tsx)
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

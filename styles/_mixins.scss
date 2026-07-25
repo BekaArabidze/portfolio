@@ -1,0 +1,35 @@
+@use "sass:map";
+
+// Breakpoints (mobile-first: styles apply from the given min-width up)
+$bp: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+@mixin up($name) {
+  @media (min-width: map.get($bp, $name)) {
+    @content;
+  }
+}
+
+// Down (max-width) — use sparingly, e.g. mobile-only menu
+@mixin down($name) {
+  @media (max-width: (map.get($bp, $name) - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,187 @@
+@use "styles/mixins" as *;
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.bg {
+    z-index: 0;
+}
+
+// darken the bottom-left so text stays legible over the shader
+.scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        100deg,
+        color-mix(in srgb, var(--bg) 80%, transparent) 0%,
+        color-mix(in srgb, var(--bg) 45%, transparent) 42%,
+        transparent 78%
+    );
+}
+
+.inner {
+    @include container;
+    position: relative;
+    z-index: 2;
+    padding-top: var(--nav-h);
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: var(--fs-200);
+    margin-bottom: var(--space-4);
+}
+
+.name {
+    font-size: var(--fs-800);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-4);
+}
+
+.role {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-500);
+    color: var(--text-muted);
+    margin-bottom: var(--space-5);
+}
+
+.bio {
+    max-width: 46ch;
+    color: var(--text-muted);
+    font-size: var(--fs-300);
+    margin-bottom: var(--space-7);
+
+    a {
+        text-decoration: underline !important;
+    }
+}
+
+.mark {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.primary,
+.ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: var(--fs-200);
+    transition:
+        transform 0.2s var(--ease-out),
+        box-shadow 0.3s var(--ease-out),
+        border-color 0.2s var(--ease-out),
+        background 0.2s var(--ease-out);
+}
+
+.primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: var(--glow-soft);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--glow);
+    }
+}
+
+.ghost {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+}
+
+.scroll {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: var(--space-6);
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+
+    .arrow {
+        animation: bob 1.8s var(--ease-out) infinite;
+    }
+
+    @include down(md) {
+        display: none;
+    }
+}
+
+@keyframes bob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+// --- intro stagger ---
+.eyebrow,
+.name,
+.role,
+.bio,
+.actions {
+    opacity: 0;
+    animation: rise 0.7s var(--ease-out) forwards;
+}
+.eyebrow {
+    animation-delay: 0.05s;
+}
+.name {
+    animation-delay: 0.15s;
+}
+.role {
+    animation-delay: 0.3s;
+}
+.bio {
+    animation-delay: 0.42s;
+}
+.actions {
+    animation-delay: 0.54s;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
