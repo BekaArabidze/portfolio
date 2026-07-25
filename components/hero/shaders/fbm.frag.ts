@@ -1,5 +1,3 @@
-// Domain-warped fbm flow field in the site's accent palette over the dark base.
-// Value-noise helper carried over from the original hero shader.
 export const fbmFrag = /* glsl */ `
   precision highp float;
 

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { screenVert } from "./shaders/screen.vert";
 import { fbmFrag } from "./shaders/fbm.frag";
+import { paletteAt } from "@/lib/palette";
 import styles from "./ShaderBackground.module.scss";
 
 export default function ShaderBackground({
@@ -71,6 +72,31 @@ export default function ShaderBackground({
 
       const render = () => renderer.render(scene, camera);
 
+      // Slowly wander the accent colors from the shared palette engine, so the
+      // hero and the cursor glow (which reads the same clock) stay in sync.
+      const applyPalette = (tSec: number) => {
+        const pal = paletteAt(tSec);
+        const cs = THREE.SRGBColorSpace;
+        material.uniforms.uColorA.value.setRGB(
+          pal.a[0] / 255,
+          pal.a[1] / 255,
+          pal.a[2] / 255,
+          cs,
+        );
+        material.uniforms.uColorB.value.setRGB(
+          pal.b[0] / 255,
+          pal.b[1] / 255,
+          pal.b[2] / 255,
+          cs,
+        );
+        material.uniforms.uColorC.value.setRGB(
+          pal.c[0] / 255,
+          pal.c[1] / 255,
+          pal.c[2] / 255,
+          cs,
+        );
+      };
+
       const resize = () => {
         const w = container.clientWidth || 1;
         const h = container.clientHeight || 1;
@@ -106,6 +132,7 @@ export default function ShaderBackground({
         elapsed += (ts - lastTs) / 1000;
         lastTs = ts;
         material.uniforms.uTime.value = elapsed;
+        applyPalette(performance.now() / 1000);
         material.uniforms.uMouse.value.lerp(mouseTarget, 0.08);
         material.uniforms.uMouseStrength.value +=
           (strengthTarget - material.uniforms.uMouseStrength.value) * 0.06;
@@ -125,6 +152,7 @@ export default function ShaderBackground({
       const evaluate = () => (visible && onScreen ? start() : stop());
 
       resize();
+      applyPalette(performance.now() / 1000); // first frame matches the engine
       render();
       canvas.style.opacity = "1"; // reveal over the CSS fallback
 

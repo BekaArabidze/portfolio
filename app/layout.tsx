@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Space_Mono } from "next/font/google";
 import { site } from "@/lib/site";
+import CursorGlow from "@/components/ui/CursorGlow";
+import Preloader from "@/components/ui/Preloader";
 import "./globals.scss";
 
 const display = Space_Grotesk({
@@ -76,7 +78,11 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Preloader />
+        {children}
+        <CursorGlow />
+      </body>
     </html>
   );
 }

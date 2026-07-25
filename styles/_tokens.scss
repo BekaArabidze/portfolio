@@ -1,61 +1,64 @@
 :root {
-  color-scheme: dark;
+    color-scheme: dark;
 
-  /* surfaces */
-  --bg: #0a0a0f;
-  --bg-2: #0d0d13;
-  --surface: #141319;
-  --surface-2: #1d1c26;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
+    /* surfaces */
+    --bg: #0a0a0f;
+    --bg-2: #0d0d13;
+    --surface: #141319;
+    --surface-2: #1d1c26;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
 
-  /* text */
-  --text: #f4f4f5;
-  --text-muted: #a1a1aa;
-  --text-faint: #71717a;
+    /* text */
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --text-faint: #71717a;
 
-  /* accents (from the original palette) */
-  --accent-purple: #6f3dfe;
-  --accent-green: #37b991;
-  --accent-orange: #f67254;
-  --accent-yellow: #ffaa03;
-  --accent: var(--accent-purple);
-  --accent-2: var(--accent-green);
+    /* accents (from the original palette) */
+    --accent-purple: #6f3dfe;
+    --accent-green: #37b991;
+    --accent-orange: #f67254;
+    --accent-yellow: #ffaa03;
+    --accent-black: #82d162;
+    --accent-white: #2849db;
+    --accent: var(--accent-purple);
+    --accent-2: var(--accent-green);
 
-  /* glows */
-  --glow: 0 0 48px rgba(111, 61, 254, 0.35);
-  --glow-soft: 0 0 80px rgba(111, 61, 254, 0.18);
+    /* glows */
+    --glow: 0 0 48px rgba(111, 61, 254, 0.35);
+    --glow-soft: 0 0 80px rgba(111, 61, 254, 0.18);
 
-  /* radii */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-full: 999px;
+    /* radii */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 999px;
 
-  /* spacing scale */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
-  --space-10: 8rem;
+    /* spacing scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
 
-  /* layout */
-  --container: 72rem;
-  --measure: 65ch;
-  --section-y: clamp(4rem, 3rem + 8vw, 8rem);
-  --gutter: clamp(1rem, 5vw, 3rem);
+    /* layout */
+    --container: 72rem;
+    --measure: 65ch;
+    --section-y: clamp(4rem, 3rem + 8vw, 8rem);
+    --gutter: clamp(1rem, 5vw, 3rem);
 
-  /* fonts (wired by next/font in layout.tsx) */
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-body: var(--font-inter), system-ui, sans-serif;
-  --font-mono: var(--font-space-mono), ui-monospace, "SFMono-Regular", monospace;
+    /* fonts (wired by next/font in layout.tsx) */
+    --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-body: var(--font-inter), system-ui, sans-serif;
+    --font-mono:
+        var(--font-space-mono), ui-monospace, "SFMono-Regular", monospace;
 
-  /* motion */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --nav-h: 4.5rem;
+    /* motion */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --nav-h: 4.5rem;
 }
