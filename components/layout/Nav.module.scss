@@ -1,0 +1,142 @@
+@use "styles/mixins" as *;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  transition:
+    background 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    backdrop-filter 0.3s var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom-color: var(--border);
+}
+
+.inner {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-200);
+  letter-spacing: -0.02em;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+
+  a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.2s var(--ease-out);
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}
+
+.cta {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  color: var(--text) !important;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent) !important;
+  }
+}
+
+.burger {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  z-index: 110;
+
+  span,
+  span::before,
+  span::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: transform 0.3s var(--ease-out);
+  }
+  span {
+    top: 50%;
+    margin-top: -1px;
+  }
+  span::before {
+    top: -7px;
+  }
+  span::after {
+    top: 7px;
+  }
+
+  span[data-open="true"] {
+    background: transparent;
+    &::before {
+      transform: translateX(-50%) translateY(7px) rotate(45deg);
+    }
+    &::after {
+      transform: translateX(-50%) translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+@include down(md) {
+  .burger {
+    display: block;
+  }
+
+  .links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+    background: color-mix(in srgb, var(--bg) 96%, transparent);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.3s var(--ease-out),
+      transform 0.3s var(--ease-out);
+
+    a {
+      font-size: var(--fs-400);
+      color: var(--text);
+    }
+  }
+
+  .linksOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+}

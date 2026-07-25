@@ -1,0 +1,10 @@
+:root {
+  --fs-100: clamp(0.83rem, 0.80rem + 0.16vw, 0.90rem); /* caption */
+  --fs-200: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem); /* body */
+  --fs-300: clamp(1.20rem, 1.11rem + 0.43vw, 1.44rem); /* lead */
+  --fs-400: clamp(1.44rem, 1.28rem + 0.80vw, 1.95rem); /* h4 */
+  --fs-500: clamp(1.73rem, 1.47rem + 1.30vw, 2.60rem); /* h3 */
+  --fs-600: clamp(2.07rem, 1.66rem + 2.05vw, 3.60rem); /* h2 */
+  --fs-700: clamp(2.49rem, 1.83rem + 3.30vw, 5.00rem); /* h1 */
+  --fs-800: clamp(2.99rem, 1.90rem + 5.40vw, 7.00rem); /* hero display */
+}

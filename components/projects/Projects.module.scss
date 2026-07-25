@@ -1,0 +1,137 @@
+@use "styles/mixins" as *;
+
+.projects {
+  padding-block: var(--section-y);
+}
+
+.inner {
+  @include container;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-3);
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+
+  @include up(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--card-accent) 60%, transparent);
+    box-shadow: 0 0 0 1px
+        color-mix(in srgb, var(--card-accent) 40%, transparent),
+      0 24px 60px -24px color-mix(in srgb, var(--card-accent) 55%, transparent);
+  }
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--surface) 90%, transparent),
+      transparent 45%
+    );
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+
+  .card:hover & {
+    transform: scale(1.04);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  flex: 1;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--fs-400);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin-right: 0.5em;
+    border-radius: var(--radius-full);
+    background: var(--card-accent);
+    vertical-align: middle;
+  }
+}
+
+.arrow {
+  color: var(--text-faint);
+  font-size: 1.1rem;
+  transition:
+    transform 0.25s var(--ease-out),
+    color 0.25s var(--ease-out);
+
+  .card:hover & {
+    color: var(--card-accent);
+    transform: translate(3px, -3px);
+  }
+}
+
+.desc {
+  color: var(--text-muted);
+  font-size: var(--fs-200);
+  flex: 1;
+}
+
+.host {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
